@@ -14,8 +14,10 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    height: max-content;
     background-color: black;
-    /* background-color: black; */
+    padding-top: 1%;
+    padding-bottom: 1%;
     /* box-shadow: 0px 1px 5px #BC6FF1; */
 }
 
@@ -50,16 +52,43 @@ nav a {
 
 .logo img {
     height: 60px;
-    width: 70px;
+    width: 62px;
     filter: invert(100%);
+    transition: opacity .8s;
+
+    transition: all 0.3s ease-in-out 0s;
 }
+
+.logo img.logo_hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+nav:hover img.logo_hover {
+    opacity: 1;
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav:hover img.logo_main {
+    opacity: 0;
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+}
+
 
 .logo h1 {
     display: inline-block;
     margin: 0;
     padding: 15px 10px;
-    font-size: 26px;
-    font-weight: normal;
+    font-size: 30px;
+    font-weight: 900;
     margin-left: 0%;
     vertical-align: top;
     color: white;
