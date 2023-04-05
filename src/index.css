@@ -166,12 +166,6 @@ nav a:hover:after {
     box-shadow: 33px 23px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
 }
-
-.box:hover {
-    /* transition: transform all 10s ease-in-out 0s; */
-
-}
-
 .box:hover img {
     transform: scale(1.1);
     box-shadow: 33px 23px rgba(0, 0, 0, 0.4);
