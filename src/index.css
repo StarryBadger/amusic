@@ -393,7 +393,7 @@ nav a:hover:after {
 }
 
 .about-section {
-    padding: 3%;
+    padding: 2%;
     margin-left: 11%;
     margin-right: 11%;
     text-align: center;
@@ -416,6 +416,8 @@ nav a:hover:after {
 
 .title {
     color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 .button {
@@ -571,7 +573,7 @@ nav a:hover:after {
 .artist-info {
     display: flex;
     margin: 20px;
-    background-color: rgba(15, 15, 15, 0.7);
+    background-color: rgba(15, 15, 15, 0.4);
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
