@@ -16,6 +16,7 @@ Clicking on an artist will take the user to a listing of 5 of their albums. Simi
 <h3>Project Structure</h3>
 <br/>
 <pre>
+├── ASSUMPTIONS.md
 ├── README.md
 └── src
     ├── about.html
