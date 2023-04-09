@@ -310,6 +310,16 @@ nav a:hover:after {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
     transition: box-shadow 0.3s ease-out, transform 0.3s ease-out; */ 
 }
+/* .fitem1 img{
+    /* border-style: solid; */
+    /* border-radius: 10%;
+    border-color: white;
+    height: 300px;
+    width: 300px;
+    opacity: 100%;
+    /* box-shadow: 33px 23px rgba(0, 0, 0, 0.5); */
+    /* transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+}  */
 .fitem2{
     border-style: solid;
     border-radius: 5px;
@@ -445,3 +455,10 @@ nav a:hover:after {
     border-style: solid;
     border-width:3px;
 }
+/* .fcontainer:hover .fitem1 img{
+    transform: scale(1.1);
+    box-shadow: 33px 23px rgba(0, 0, 0, 0.4);
+    /* border-width: 0; */
+    /* filter: blur(0.3vw);
+    box-shadow: none;
+} */ 
