@@ -4,4 +4,4 @@ The font family used in inbuilt in CSS and may be displayed slightly differently
 
 Due to a large number of images, all the elements on the website may take some time to load.
 
-Album date of release and song count, which was required to be displayed is visible to the user only when the cursor hovers over it.
+Album date of release and song count, which was required to be displayed are visible to the user only when the cursor hovers over it.
