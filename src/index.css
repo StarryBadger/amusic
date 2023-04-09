@@ -335,7 +335,7 @@ nav a:hover:after {
      transition: box-shadow 0.3s ease-out, transform 0.3s ease-out; */
 }
 .fitem2 p{
-    font-size: 70px;
+    font-size: 50px;
     color:white;
     word-wrap: break-word;
     text-align: center;
@@ -462,3 +462,25 @@ nav a:hover:after {
     /* filter: blur(0.3vw);
     box-shadow: none;
 } */ 
+.songbox {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 11%;
+    margin-right:11%; 
+    margin-top: 1%;  
+    margin-bottom: 1%;
+    text-align: center;
+    background-color: rgba(15, 15, 15, 0.7);
+    color: white;
+    font-size: 25px;
+    border-radius: 22px;
+}
+.songbox:hover{
+    background-color: rgba(255, 105,180, 0.1);
+}
+.tab {
+    display: inline-block;
+    margin-left: 400px;
+}
