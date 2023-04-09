@@ -4,6 +4,7 @@
 The home page contains a navigation bar which allows the user to go to the Artists page and the About page.
 There are 3 rows of Top Charts contents, listing three of each: Top Artists, Top Albums and Top Songs of the Week.
 Clicking on an artist will take the user to a listing of 5 of their albums. Similarly, clicking on an album will take the user to a listing of 5 songs in the album.</p>
+<h4>Hovering on the Artist and Album divs show additional information about them!</h4>
 <p>On the Navigation bar, clicking on `Artists` takes the user to the Artists page where 5 artists are listed. Clicking on an artist will take the user to a listing of 5 of their albums. Clicking on any one of these albums will take the user to a listing of 5 songs in the album. These songs are not clickable.</p>
 <p>Clicking on `About` on the Navigation bar or 'About Us` on the website footer takes the user to a page where the names and email information of the two creators are provided along with a quick rundown on the purpose of Amusic as a music database webste.</p>
 <p>Terms of Service in the footer lists the Terms of Service that Amusic expects all its users to abide by.</p>  
