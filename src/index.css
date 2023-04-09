@@ -393,8 +393,7 @@ nav a:hover:after {
 }
 
 .about-section {
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding: 3%;
     margin-left: 11%;
     margin-right: 11%;
     text-align: center;
