@@ -211,7 +211,7 @@ nav a:hover:after {
     /* border-style: solid; */
     /* border-radius: 5%; */
     box-shadow: 0px 0px 50px 5px gold;
-    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+    transition: 0.3s ease-out;
     opacity: 0;
     position: absolute;
 }
@@ -225,7 +225,7 @@ nav a:hover:after {
     /* border-style: solid; */
     /* border-radius: 5%; */
     box-shadow: 0px 0px 50px 5px silver;
-    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+    transition: 0.3s ease-out;
     opacity: 0;
     position: absolute;
 }
@@ -239,7 +239,7 @@ nav a:hover:after {
     /* border-style: solid; */
     /* border-radius: 5%; */
     box-shadow: 0px 0px 50px 5px rgb(255, 149, 28);
-    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+    transition: 0.3s ease-out;
     opacity: 0;
     position: absolute;
 }
