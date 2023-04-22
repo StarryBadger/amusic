@@ -67,8 +67,16 @@ function generateFooter() {
     </footer>
     `;
 }
-function generateaudioprev(link) {
-   return ` 
+function generateaudioprev(link,album,trackname,artistname) {
+   return `
+   <div class="songbox">
+   <div style="display: flex; align-items: center;">
+       <!-- <div style="font-size: 18px; color: white; margin-right: 10px;">1</div> -->
+       <img src="${album}">
+       <div style="flex: 1; text-align: center; color: white; font-size: 18px;">${trackname}</div>
+       <div style="font-size: 18px; color: white; margin-left: 10px;">${artistname}</div>
+   </div>
+   </div>
    <div class="songbox">
    <div style="display: flex; align-items: center;">
    <audio controls>
@@ -109,13 +117,16 @@ form.addEventListener('submit', (event) => {
             resultsContainer.innerHTML = generateerror();
         }
         else{
-        const link = data.results[0].previewUrl;
         for (let i = 0; i < data.results.length; i++) {
             const link = data.results[i].previewUrl;
+            const album=data.results[i].artworkUrl100;
+            const trackname=data.results[i].collectionName;
+            const artistname=data.results[i].artistName;
+
             if(i===0){
-            htmlcode = generateaudioprev(link);
+            htmlcode = generateaudioprev(link,album,trackname,artistname);
             }else{
-                htmlcode += generateaudioprev(link);
+                htmlcode += generateaudioprev(link,album,trackname,artistname);
             }
           } 
         resultsContainer.innerHTML = htmlcode;

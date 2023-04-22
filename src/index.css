@@ -575,9 +575,10 @@ nav a:hover:after {
   }
   
   #results-container {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    width:100%;
   }
   
