@@ -112,6 +112,7 @@ form.addEventListener('submit', (event) => {
       .then(response => response.json())
       .then(data => {
         console.log(data.results);
+        console.log(url);
         var htmlcode;
         if(data.results.length===0){
             resultsContainer.innerHTML = generateerror();
