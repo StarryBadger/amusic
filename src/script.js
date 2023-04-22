@@ -67,8 +67,8 @@ function generateFooter() {
     </footer>
     `;
 }
-function generateaudioprev(link,album,trackname,artistname) {
-   return `
+function generateaudioprev(link, album, trackname, artistname) {
+    return `
    <div class="searchsongbox">
    <div style="display: flex; align-items: center;">
        <!-- <div style="font-size: 18px; color: white; margin-right: 10px;">1</div> -->
@@ -87,7 +87,7 @@ function generateaudioprev(link,album,trackname,artistname) {
    <br><br>
    `
 }
-function generateerror(){
+function generateerror() {
     return `
     <br><br>
    <h2 style="color:white;text-align:center">Oops! No result found</h2>
@@ -101,39 +101,39 @@ const input = document.querySelector('input[type=text]');
 const resultsContainer = document.querySelector('#results-container');
 
 form.addEventListener('submit', (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const searchTerm = input.value.trim();
+    const searchTerm = input.value.trim();
 
-  if (searchTerm !== '') {
-    const url = `https://itunes.apple.com/search?term=${encodeURIComponent(searchTerm)}&limit=10`;
+    if (searchTerm !== '') {
+        const url = `https://itunes.apple.com/search?term=${encodeURIComponent(searchTerm)}&entity=musicTrack&explicit=no&limit=10`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.results);
-        console.log(url);
-        var htmlcode;
-        if(data.results.length===0){
-            resultsContainer.innerHTML = generateerror();
-        }
-        else{
-        for (let i = 0; i < data.results.length; i++) {
-            const link = data.results[i].previewUrl;
-            const album=data.results[i].artworkUrl100;
-            const trackname=data.results[i].trackName;
-            const artistname=data.results[i].artistName;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.results);
+                console.log(url);
+                var htmlcode;
+                if (data.results.length === 0) {
+                    resultsContainer.innerHTML = generateerror();
+                }
+                else {
+                    for (let i = 0; i < data.results.length; i++) {
+                        const link = data.results[i].previewUrl;
+                        const album = data.results[i].artworkUrl100;
+                        const trackname = data.results[i].trackName;
+                        const artistname = data.results[i].artistName;
 
-            if(i===0){
-            htmlcode = generateaudioprev(link,album,trackname,artistname);
-            }else{
-                htmlcode += generateaudioprev(link,album,trackname,artistname);
-            }
-          } 
-        resultsContainer.innerHTML = htmlcode;
-        }
-        // resultsContainer.innerHTML = 
-        })
+                        if (i === 0) {
+                            htmlcode = generateaudioprev(link, album, trackname, artistname);
+                        } else {
+                            htmlcode += generateaudioprev(link, album, trackname, artistname);
+                        }
+                    }
+                    resultsContainer.innerHTML = htmlcode;
+                }
+                // resultsContainer.innerHTML = 
+            })
     }
-  })
+})
 
