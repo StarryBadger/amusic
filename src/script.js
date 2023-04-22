@@ -72,7 +72,8 @@ function generateaudioprev(link) {
     <!-- <source src="horse.ogg" type="audio/ogg"> -->
     <source src=${link} type="audio/mpeg">
     Your browser does not support the audio tag.
-  </audio> `
+  </audio>
+  <br><br> `
 }
 const footerJS = generateFooter();
 document.write(footerJS);
@@ -93,9 +94,12 @@ form.addEventListener('submit', (event) => {
       .then(response => response.json())
       .then(data => {
         console.log(data.results);
+        var htmlcode;
         const link = data.results[0].previewUrl;
-        for()
-        const htmlcode+= generateaudioprev(link);
+        for (let i = 0; i < data.results.length; i++) {
+            const link = data.results[i].previewUrl;
+            htmlcode += generateaudioprev(link);
+          } 
         resultsContainer.innerHTML = htmlcode;
         // resultsContainer.innerHTML = 
         })
