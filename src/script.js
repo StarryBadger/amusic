@@ -69,18 +69,16 @@ function generateFooter() {
 }
 function generateaudioprev(link,album,trackname,artistname) {
    return `
-   <div class="songbox">
+   <div class="searchsongbox">
    <div style="display: flex; align-items: center;">
        <!-- <div style="font-size: 18px; color: white; margin-right: 10px;">1</div> -->
-       <img src="${album}">
+       <img src="${album}" style="border-radius: 10px; width: 130px">
        <div style="flex: 1; text-align: center; color: white; font-size: 18px;">${trackname}</div>
        <div style="font-size: 18px; color: white; margin-left: 10px;">${artistname}</div>
    </div>
-   </div>
-   <div class="songbox">
-   <div style="display: flex; align-items: center;">
+   <br>
+   <div style="margin: 0 auto;">
    <audio controls>
-   <!-- <source src="horse.ogg" type="audio/ogg"> -->
    <source src="${link}" type="audio/mpeg">
    Your browser does not support the audio tag.
    </audio> 
@@ -91,7 +89,9 @@ function generateaudioprev(link,album,trackname,artistname) {
 }
 function generateerror(){
     return `
-    <h3 style="color:white">Oops! No result found</h3>`
+    <br><br>
+   <h2 style="color:white;text-align:center">Oops! No result found</h2>
+   `
 }
 const footerJS = generateFooter();
 document.write(footerJS);
@@ -120,7 +120,7 @@ form.addEventListener('submit', (event) => {
         for (let i = 0; i < data.results.length; i++) {
             const link = data.results[i].previewUrl;
             const album=data.results[i].artworkUrl100;
-            const trackname=data.results[i].collectionName;
+            const trackname=data.results[i].trackName;
             const artistname=data.results[i].artistName;
 
             if(i===0){

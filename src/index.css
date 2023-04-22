@@ -581,4 +581,24 @@ nav a:hover:after {
     margin-top: 20px;
     width:100%;
   }
+  .searchsongbox {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin-left: 11%;
+    margin-right: 11%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+    background-color: rgba(60, 60, 60, 0.4);
+    color: white;
+    font-size: 25px;
+    border-radius: 22px;
+}
+audio {
+    margin: 10px 0;
+    opacity: 0.8;
+    width: 57%;
+  }
   
