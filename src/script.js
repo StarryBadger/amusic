@@ -68,12 +68,18 @@ function generateFooter() {
     `;
 }
 function generateaudioprev(link) {
-   return ` <audio controls>
-    <!-- <source src="horse.ogg" type="audio/ogg"> -->
-    <source src=${link} type="audio/mpeg">
-    Your browser does not support the audio tag.
-  </audio>
-  <br><br> `
+   return ` 
+   <div class="songbox">
+   <div style="display: flex; align-items: center;">
+   <audio controls>
+   <!-- <source src="horse.ogg" type="audio/ogg"> -->
+   <source src="${link}" type="audio/mpeg">
+   Your browser does not support the audio tag.
+   </audio> 
+   </div>
+   </div>
+   <br><br>
+   `
 }
 const footerJS = generateFooter();
 document.write(footerJS);
