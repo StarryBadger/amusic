@@ -81,6 +81,10 @@ function generateaudioprev(link) {
    <br><br>
    `
 }
+function generateerror(){
+    return `
+    <h3 style="color:white">Oops! No result found</h3>`
+}
 const footerJS = generateFooter();
 document.write(footerJS);
 
@@ -101,12 +105,21 @@ form.addEventListener('submit', (event) => {
       .then(data => {
         console.log(data.results);
         var htmlcode;
+        if(data.results.length===0){
+            resultsContainer.innerHTML = generateerror();
+        }
+        else{
         const link = data.results[0].previewUrl;
         for (let i = 0; i < data.results.length; i++) {
             const link = data.results[i].previewUrl;
-            htmlcode += generateaudioprev(link);
+            if(i===0){
+            htmlcode = generateaudioprev(link);
+            }else{
+                htmlcode += generateaudioprev(link);
+            }
           } 
         resultsContainer.innerHTML = htmlcode;
+        }
         // resultsContainer.innerHTML = 
         })
     }
