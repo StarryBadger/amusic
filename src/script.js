@@ -67,6 +67,38 @@ function generateFooter() {
     </footer>
     `;
 }
+function generateaudioprev(link) {
+   return ` <audio controls>
+    <!-- <source src="horse.ogg" type="audio/ogg"> -->
+    <source src=${link} type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio> `
+}
 const footerJS = generateFooter();
 document.write(footerJS);
+
+const form = document.querySelector('form');
+const input = document.querySelector('input[type=text]');
+const resultsContainer = document.querySelector('#results-container');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const searchTerm = input.value.trim();
+
+  if (searchTerm !== '') {
+    const url = `https://itunes.apple.com/search?term=${encodeURIComponent(searchTerm)}&limit=10`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.results);
+        const link = data.results[0].previewUrl;
+        for()
+        const htmlcode+= generateaudioprev(link);
+        resultsContainer.innerHTML = htmlcode;
+        // resultsContainer.innerHTML = 
+        })
+    }
+  })
 
