@@ -548,3 +548,36 @@ nav a:hover:after {
     font-size: 22px;
     line-height: 1.5;
 }
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  input[type=text] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 60%;
+  }
+  
+  button[type=submit] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  button[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  #results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
