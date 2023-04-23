@@ -2,39 +2,26 @@
 <!-- Phase 2 indicator -->
 <html>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amusic</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
+<body class="unselectable">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amusic</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="shortcut icon" href="#">
 </head>
 
 <body>
-    <br><br><br><br><br><br><br><br><br><br><br>
-    <div class="search-container">
-        <form>
-          <input type="text" placeholder="Search any song or artist...">
-          <button type="submit">Search</button>
-        </form>
-      </div>
-      
-      <div id="results-container">
-        <!-- <audio controls> -->
-          <!-- <source src="horse.ogg" type="audio/ogg"> -->
-          <!-- <source src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/40/14/86/4014866e-b498-6112-62a3-6d7e1eab8785/mzaf_15911934325716225674.plus.aac.p.m4a" type="audio/mpeg">
-          Your browser does not support the audio tag.
-        </audio>  -->
-        <!-- <h3 style="color:white">Oops! No result found</h3> -->
-        <!-- <div class="songbox">
-          <div style="display: flex; align-items: center;"> -->
-              <!-- <div style="font-size: 18px; color: white; margin-right: 10px;">1</div> -->
-              <!-- <img src="https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/84/5c/7a/845c7a4d-b422-af00-1728-5729b05fd97a/8903246405207_cover.jpg/100x100bb.jpg">
-              <div style="flex: 1; text-align: center; color: white; font-size: 18px;">Across The Universe</div>
-              <div style="font-size: 18px; color: white; margin-left: 10px;">3:48</div>
-          </div>
-      </div> -->
-      </div>
-    <br><br><br><br><br><br><br><br><br><br>
-    <script src="script.js"></script>
+  <br><br><br><br><br><br><br><br><br><br><br>
+  <div class="search-container unselectable">
+    <form>
+      <input type="text" placeholder="Search any song or artist...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <br><br><br><br>
+
+  <div id="results-container"></div>
+  <br><br><br><br><br><br><br><br><br><br>
+  <script src="script.js"></script>
 </body>
 
 </html>
