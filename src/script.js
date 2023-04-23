@@ -4,37 +4,141 @@ function typewriterEffect() {
     const text = element.innerHTML;
     element.innerHTML = "";
     for (let i = 0; i < text.length; i++) {
-      setTimeout(() => {
-        element.innerHTML += text.charAt(i);
-      }, i * 130);
+        setTimeout(() => {
+            element.innerHTML += text.charAt(i);
+        }, i * 130);
     }
-  }
-  
-  if (window.location.href.includes("AlbumsEminem.html") || window.location.href.includes("AlbumsImagineDragons.html") || window.location.href.includes("AlbumsLinkinPark.html") || window.location.href.includes("AlbumsTheBeatles.html") || window.location.href.includes("AlbumsGregory.html")) {
+}
+
+if (window.location.href.includes("AlbumsEminem.html") || window.location.href.includes("AlbumsImagineDragons.html") || window.location.href.includes("AlbumsLinkinPark.html") || window.location.href.includes("AlbumsTheBeatles.html") || window.location.href.includes("AlbumsGregory.html")) {
     window.onload = typewriterEffect;
-  }
-  
+}
+
 
 //nav bar  
 function generateNavBar() {
-    return `
-    <nav>
-        <div class="logo unselectable">
-            <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
-            <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
-            <h1>AMUSIC</h1>
+    if (window.location.pathname.includes('index.html')) {
+        return `
+        <nav>
+            <div class="logo unselectable">
+                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <h1>AMUSIC</h1>
 
-        </div>
-        <ul class="unselectable">
-            
-            <li><a href="index.html">Home</a></li>
-            <li><a href="artists.html" id="hoverColor">Artists</a></li>
-            <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
-            <li><a href="search.html" id="hoverColor">Search</a></li>
-            <li><a href="about.html" id="hoverColor">About</a></li>
-        </ul>
-    </nav>
-    `;
+            </div>
+            <ul class="unselectable">
+                
+                <li><a href="index.html" class="thisPageNow">Home</a></li>
+                <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
+                <li><a href="search.html" id="hoverColor">Search</a></li>
+                <li><a href="about.html" id="hoverColor">About</a></li>
+            </ul>
+        </nav>
+        `;
+    }
+    else if (window.location.pathname.includes('artists.html')) {
+        return `
+        <nav>
+            <div class="logo unselectable">
+                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <h1>AMUSIC</h1>
+
+            </div>
+            <ul class="unselectable">
+                
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html" id="hoverColor" class="thisPageNow">Artists</a></li>
+                <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
+                <li><a href="search.html" id="hoverColor">Search</a></li>
+                <li><a href="about.html" id="hoverColor">About</a></li>
+            </ul>
+        </nav>
+        `;
+    }
+    else if (window.location.pathname.includes('spotlight.html')) {
+        return `
+        <nav>
+            <div class="logo unselectable">
+                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <h1>AMUSIC</h1>
+
+            </div>
+            <ul class="unselectable">
+                
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="spotlight.html" id="hoverColor" class="thisPageNow">Spotlight</a></li>
+                <li><a href="search.html" id="hoverColor">Search</a></li>
+                <li><a href="about.html" id="hoverColor">About</a></li>
+            </ul>
+        </nav>
+        `;
+    }
+    else if (window.location.pathname.includes('search.html')) {
+        return `
+        <nav>
+            <div class="logo unselectable">
+                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <h1>AMUSIC</h1>
+
+            </div>
+            <ul class="unselectable">
+                
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
+                <li><a href="search.html" id="hoverColor" class="thisPageNow">Search</a></li>
+                <li><a href="about.html" id="hoverColor">About</a></li>
+            </ul>
+        </nav>
+        `;
+    }
+    else if (window.location.pathname.includes('about.html')) {
+        return `
+        <nav>
+            <div class="logo unselectable">
+                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <h1>AMUSIC</h1>
+
+            </div>
+            <ul class="unselectable">
+                
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
+                <li><a href="search.html" id="hoverColor">Search</a></li>
+                <li><a href="about.html" id="hoverColor" class="thisPageNow">About</a></li>
+            </ul>
+        </nav>
+        `;
+    }
+    else {
+        return `
+        <nav>
+            <div class="logo unselectable">
+                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <h1>AMUSIC</h1>
+
+            </div>
+            <ul class="unselectable">
+                
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
+                <li><a href="search.html" id="hoverColor">Search</a></li>
+                <li><a href="about.html" id="hoverColor">About</a></li>
+            </ul>
+        </nav>
+        `;
+    }
+
+
 }
 const navBar = generateNavBar();
 document.write(navBar);
@@ -100,7 +204,7 @@ if (window.location.pathname.includes('spotlight.html')) {
             mg.style.transition = '1.5s ease-out';
             isZoomed = true;
         }
-    }, 2500);
+    }, 2200);
 }
 
 

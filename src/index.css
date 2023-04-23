@@ -40,6 +40,11 @@ nav a {
     position: relative;
 }
 
+.thisPageNow {
+    font-weight: 600;
+    font-display: swap;
+}
+
 .logo {
     float: left;
     position: relative;
@@ -571,6 +576,7 @@ input[type=text]:hover {
 input[type=text]::placeholder {
     color: #bbb;
 }
+
 input[type=text]:focus {
     outline: none;
 }
@@ -588,7 +594,7 @@ button[type=submit] {
 }
 
 button[type=submit]:hover {
-    background-color:  #296da5;
+    background-color: #296da5;
 }
 
 
