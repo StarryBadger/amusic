@@ -64,8 +64,7 @@ function generateFooter() {
     <footer>
         <div class="footer unselectable">
             <div class="logo unselectable">
-                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
-                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src="LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1 style="color:#5B8FB9;">AMUSIC</h1>
             </div>
             <div class="row">
