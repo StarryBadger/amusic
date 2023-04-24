@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amusic</title>
-<link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="shortcut icon" href="#">
 </head>
 
@@ -26,12 +26,40 @@
     <br><br><br>
     <div class="album-info">
         <div class="text-container">
-          <h2>New Album dropping in</h2>
-          <span id="countdown-timer" style="color: white;"></span>
+            <h2>New Album dropping in</h2>
+            <span id="countdown-timer" style="color: white;"></span>
         </div>
-        <img src="spotlightPics/JoytimeIV.jpg" alt="Album Cover" style="width:400px;border-radius: 10%; float: right;margin-right: 180px;">
-      </div>
-    <br><br><br><br><br><br><br>
+        <img src="spotlightPics/JoytimeIV.jpg" alt="Album Cover"
+            style="width:400px;border-radius: 10%; float: right;margin-right: 180px;">
+    </div>
+    <br><br><br>
+    <div class="review">
+        <h2>Write a Review</h2>
+        <form>
+            <label for="name">Name:</label>
+            <br><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <br><br>
+            <label style="margin-right: 80px;">Rating:</label>
+            <label><input type="radio" name="rating" value="1">1</label>
+            <label><input type="radio" name="rating" value="2">2</label>
+            <label><input type="radio" name="rating" value="3">3</label>
+            <label><input type="radio" name="rating" value="4">4</label>
+            <label><input type="radio" name="rating" value="5">5</label>
+            <br><br><br>
+            <label for="review">Review:</label>
+            <br><br>
+            <textarea id="review" name="review" required></textarea><br><br>
+
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+        <br><br>
+        <h2>Reviews</h2>
+        <br>
+        <table id="reviewTable">
+        </table>
+    </div>
+    <br><br><br><br>
     <script src="script.js"></script>
 </body>
 
