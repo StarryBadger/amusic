@@ -2,7 +2,7 @@
 <!-- Phase 2 indicator -->
 <html>
 
-<body class="unselectable">
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amusic</title>
   <link rel="stylesheet" type="text/css" href="index.css">
@@ -11,16 +11,32 @@
 
 <body>
   <br><br><br><br><br><br><br><br><br><br><br>
+  
   <div class="search-container unselectable">
-    <form>
+    <form class="b">
       <input type="text" placeholder="Search any song or artist...">
       <button type="submit">Search</button>
+    </form>
+  </div>
+  <br><br><br><br>
+  
+  <div class="filter-container">
+    <form class="a">
+      <label for="duration-input" style="color:white">Duration:</label>
+      <input type="number" id="duration-input" name="duration-input" placeholder="Duration in minutes" required>
+      <br><br>
+      <label for="explicit-toggle" style="color:white">Explicit:</label>
+      <label class="switch">
+        <input type="checkbox" id="explicit-toggle">
+        <span class="slider"></span>
+      </label>
     </form>
   </div>
   <br><br><br><br>
 
   <div id="results-container"></div>
   <br><br><br><br><br><br><br><br><br><br>
+  
   <script src="script.js"></script>
 </body>
 

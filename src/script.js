@@ -267,14 +267,18 @@ if (window.location.pathname.includes('search.html')) {
     const form = document.querySelector('form');
     const input = document.querySelector('input[type=text]');
     const resultsContainer = document.querySelector('#results-container');
+    const durationInput = document.getElementById('duration-input');
+    const explicitToggle = document.getElementById('explicit-toggle');
+  
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
         const searchTerm = input.value.trim();
-
+        const duration = durationInput.value;
+        const explicit = explicitToggle.checked;
         if (searchTerm !== '') {
-            const url = `https://itunes.apple.com/search?term=${encodeURIComponent(searchTerm)}&entity=musicTrack&explicit=no&limit=10`;
+            const url = `https://itunes.apple.com/search?term=${encodeURIComponent(searchTerm)}&entity=musicTrack`;
 
             fetch(url)
                 .then(response => response.json())
@@ -305,34 +309,34 @@ if (window.location.pathname.includes('search.html')) {
     })
 }
 function submitReview() {
-  var name = document.getElementById("name").value;
-  var rating = document.querySelector('input[name="rating"]:checked').value;
-  var review = document.getElementById("review").value;
+    var name = document.getElementById("name").value;
+    var rating = document.querySelector('input[name="rating"]:checked').value;
+    var review = document.getElementById("review").value;
 
-  var reviewTable = document.getElementById("reviewTable");
-  if (reviewTable.rows.length === 0) {
-    // Only insert headings if table is currently empty
-    var headingRow = reviewTable.insertRow(-1);
-    var nameHeading = headingRow.insertCell(0);
-    var ratingHeading = headingRow.insertCell(1);
-    var reviewHeading = headingRow.insertCell(2);
-    nameHeading.innerHTML = "Name";
-    ratingHeading.innerHTML = "Rating";
-    reviewHeading.innerHTML = "Review";
-  }
-  var newRow = reviewTable.insertRow(-1);
-  var nameCell = newRow.insertCell(0);
-  var ratingCell = newRow.insertCell(1);
-  ratingCell.classList.add("center-cell"); 
-  var reviewCell = newRow.insertCell(2);
+    var reviewTable = document.getElementById("reviewTable");
+    if (reviewTable.rows.length === 0) {
+        // Only insert headings if table is currently empty
+        var headingRow = reviewTable.insertRow(-1);
+        var nameHeading = headingRow.insertCell(0);
+        var ratingHeading = headingRow.insertCell(1);
+        var reviewHeading = headingRow.insertCell(2);
+        nameHeading.innerHTML = "Name";
+        ratingHeading.innerHTML = "Rating";
+        reviewHeading.innerHTML = "Review";
+    }
+    var newRow = reviewTable.insertRow(-1);
+    var nameCell = newRow.insertCell(0);
+    var ratingCell = newRow.insertCell(1);
+    ratingCell.classList.add("center-cell");
+    var reviewCell = newRow.insertCell(2);
 
-  nameCell.innerHTML = name;
-  ratingCell.innerHTML = rating;
-  reviewCell.innerHTML = review;
+    nameCell.innerHTML = name;
+    ratingCell.innerHTML = rating;
+    reviewCell.innerHTML = review;
 
-  document.getElementById("name").value = "";
-  document.querySelector('input[name="rating"]:checked').checked = false;
-  document.getElementById("review").value = "";
+    document.getElementById("name").value = "";
+    document.querySelector('input[name="rating"]:checked').checked = false;
+    document.getElementById("review").value = "";
 }
 
 
