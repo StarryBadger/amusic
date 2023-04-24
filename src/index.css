@@ -542,6 +542,7 @@ nav a:hover:after {
     margin-top: 10%;
     font-size: 50px;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .artist-details h3 {
