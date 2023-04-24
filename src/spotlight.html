@@ -34,22 +34,35 @@
     </div>
     <br><br><br>
     <div class="review">
-        <h2>Write a Review</h2>
+        <h2>Share Your Feedback</h2>
+        <br>
         <form>
             <label for="name">Name:</label>
             <br><br>
             <input type="text" id="name" name="name" required><br><br>
             <br><br>
             <label style="margin-right: 80px;">Rating:</label>
-            <label><input type="radio" name="rating" value="1">1</label>
-            <label><input type="radio" name="rating" value="2">2</label>
-            <label><input type="radio" name="rating" value="3">3</label>
-            <label><input type="radio" name="rating" value="4">4</label>
-            <label><input type="radio" name="rating" value="5">5</label>
-            <br><br><br>
+            <br><br>
+            <div class="radio-container">
+                <input type="radio" id="rating-1" name="rating" value="&#9733;">
+                <label for="rating-1"><span>1</span></label>
+
+                <input type="radio" id="rating-2" name="rating" value="&#9733;&#9733;">
+                <label for="rating-2"><span>2</span></label>
+
+                <input type="radio" id="rating-3" name="rating" value="&#9733;&#9733;&#9733;">
+                <label for="rating-3"><span>3</span></label>
+
+                <input type="radio" id="rating-4" name="rating" value="&#9733;&#9733;&#9733;&#9733;">
+                <label for="rating-4"><span>4</span></label>
+
+                <input type="radio" id="rating-5" name="rating" value="&#9733;&#9733;&#9733;&#9733;&#9733;">
+                <label for="rating-5"><span>5</span></label>
+            </div>
+            <br><br>
             <label for="review">Review:</label>
             <br><br>
-            <textarea id="review" name="review" required></textarea><br><br>
+            <textarea id="review" name="review" required></textarea><br><br><br>
 
             <button type="button" onclick="submitReview()">Submit Review</button>
         </form>
