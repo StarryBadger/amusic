@@ -269,40 +269,146 @@ if (window.location.pathname.includes('search.html')) {
     const resultsContainer = document.querySelector('#results-container');
     const durationInput = document.getElementById('duration-input');
     const explicitToggle = document.getElementById('explicit-toggle');
-  
+
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
         const searchTerm = input.value.trim();
         const duration = durationInput.value;
-        const explicit = explicitToggle.checked;
+        const notexplicit = explicitToggle.checked;
         if (searchTerm !== '') {
             const url = `https://itunes.apple.com/search?term=${encodeURIComponent(searchTerm)}&entity=musicTrack`;
 
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data.results);
+                    // console.log(data.results);
                     console.log(url);
                     var htmlcode;
                     if (data.results.length === 0) {
                         resultsContainer.innerHTML = generateerror();
                     }
                     else {
-                        for (let i = 0; i < data.results.length; i++) {
-                            const link = data.results[i].previewUrl;
-                            const album = data.results[i].artworkUrl100;
-                            const trackname = data.results[i].trackName;
-                            const artistname = data.results[i].artistName;
+                        let flag = 0;
+                        let count = 0;
+                        if (notexplicit) {
+                            if (duration != "") {
+                                for (let i = 0; i < data.results.length; i++) {
+                                    if (count === 10) {
+                                        break;
+                                    }
+                                    if ((data.results[i].trackExplicitness !== "explicit" && data.results[i].trackExplicitness !== "Explicit") && (data.results[i].trackTimeMillis / 60000 <= duration)) {
+                                        const link = data.results[i].previewUrl;
+                                        const album = data.results[i].artworkUrl100;
+                                        const trackname = data.results[i].trackName;
+                                        const artistname = data.results[i].artistName;
+                                        console.log(data.results[i]);
+                                        if (flag === 0) {
+                                            htmlcode = generateaudioprev(link, album, trackname, artistname);
+                                            count += 1;
+                                            flag = 1;
+                                        } else {
+                                            htmlcode += generateaudioprev(link, album, trackname, artistname);
+                                            count += 1;
+                                        }
+                                    }
+                                }
+                                if (flag === 0) {
+                                    resultsContainer.innerHTML = generateerror();
+                                }
+                                else {
+                                    resultsContainer.innerHTML = htmlcode;
+                                }
 
-                            if (i === 0) {
-                                htmlcode = generateaudioprev(link, album, trackname, artistname);
-                            } else {
-                                htmlcode += generateaudioprev(link, album, trackname, artistname);
+                            }
+                            else {
+                                for (let i = 0; i < data.results.length; i++) {
+                                    if (count === 10) {
+                                        break;
+                                    }
+                                    if ((data.results[i].trackExplicitness !== "explicit" && data.results[i].trackExplicitness !== "Explicit")) {
+                                        const link = data.results[i].previewUrl;
+                                        const album = data.results[i].artworkUrl100;
+                                        const trackname = data.results[i].trackName;
+                                        const artistname = data.results[i].artistName;
+                                        console.log(data.results[i]);
+                                        if (flag === 0) {
+                                            htmlcode = generateaudioprev(link, album, trackname, artistname);
+                                            count += 1;
+                                            flag = 1;
+                                        } else {
+                                            htmlcode += generateaudioprev(link, album, trackname, artistname);
+                                            count += 1;
+                                        }
+                                    }
+                                }
+                                if (flag === 0) {
+                                    resultsContainer.innerHTML = generateerror();
+                                }
+                                else {
+                                    resultsContainer.innerHTML = htmlcode;
+                                }
                             }
                         }
-                        resultsContainer.innerHTML = htmlcode;
+                        else {
+                            if (duration != "") {
+                                for (let i = 0; i < data.results.length; i++) {
+                                    if (count === 10) {
+                                        break;
+                                    }
+                                    if ((data.results[i].trackTimeMillis / 60000 <= duration)) {
+                                        const link = data.results[i].previewUrl;
+                                        const album = data.results[i].artworkUrl100;
+                                        const trackname = data.results[i].trackName;
+                                        const artistname = data.results[i].artistName;
+                                        console.log(data.results[i]);
+                                        if (flag === 0) {
+                                            htmlcode = generateaudioprev(link, album, trackname, artistname);
+                                            count += 1;
+                                            flag = 1;
+                                        } else {
+                                            htmlcode += generateaudioprev(link, album, trackname, artistname);
+                                            count += 1;
+                                        }
+                                    }
+                                }
+                                if (flag === 0) {
+                                    resultsContainer.innerHTML = generateerror();
+                                }
+                                else {
+                                    resultsContainer.innerHTML = htmlcode;
+                                }
+                            }
+                            else {
+                                for (let i = 0; i < data.results.length; i++) {
+                                    if (count === 10) {
+                                        break;
+                                    }
+
+                                    const link = data.results[i].previewUrl;
+                                    const album = data.results[i].artworkUrl100;
+                                    const trackname = data.results[i].trackName;
+                                    const artistname = data.results[i].artistName;
+                                    console.log(data.results[i]);
+                                    if (flag === 0) {
+                                        htmlcode = generateaudioprev(link, album, trackname, artistname);
+                                        count += 1;
+                                        flag = 1;
+                                    } else {
+                                        htmlcode += generateaudioprev(link, album, trackname, artistname);
+                                        count += 1;
+                                    }
+
+                                }
+                                if (flag === 0) {
+                                    resultsContainer.innerHTML = generateerror();
+                                }
+                                else {
+                                    resultsContainer.innerHTML = htmlcode;
+                                }
+                            }
+                        }
                     }
                 })
         }
