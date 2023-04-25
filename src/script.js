@@ -421,7 +421,6 @@ function submitReview() {
 
     var reviewTable = document.getElementById("reviewTable");
     if (reviewTable.rows.length === 0) {
-        // Only insert headings if table is currently empty
         var headingRow = reviewTable.insertRow(-1);
         var nameHeading = headingRow.insertCell(0);
         var ratingHeading = headingRow.insertCell(1);
@@ -433,7 +432,7 @@ function submitReview() {
     var newRow = reviewTable.insertRow(-1);
     var nameCell = newRow.insertCell(0);
     var ratingCell = newRow.insertCell(1);
-    ratingCell.classList.add("center-cell");
+    // ratingCell.classList.add("center-cell");
     var reviewCell = newRow.insertCell(2);
 
     nameCell.innerHTML = name;
