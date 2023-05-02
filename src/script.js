@@ -30,6 +30,7 @@ function generateNavBar() {
                 
                 <li><a href="index.html" class="thisPageNow">Home</a></li>
                 <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="playlist.html" id="hoverColor">Playlist</a></li>
                 <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
                 <li><a href="search.html" id="hoverColor">Search</a></li>
                 <li><a href="about.html" id="hoverColor">About</a></li>
@@ -50,6 +51,28 @@ function generateNavBar() {
                 
                 <li><a href="index.html">Home</a></li>
                 <li><a href="artists.html" id="hoverColor" class="thisPageNow">Artists</a></li>
+                <li><a href="playlist.html" id="hoverColor">Playlist</a></li>
+                <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
+                <li><a href="search.html" id="hoverColor">Search</a></li>
+                <li><a href="about.html" id="hoverColor">About</a></li>
+            </ul>
+        </nav>
+        `;
+    }
+    else if (window.location.pathname.includes('playlist.html')) {
+        return `
+        <nav>
+            <div class="logo unselectable">
+                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <h1>AMUSIC</h1>
+
+            </div>
+            <ul class="unselectable">
+                
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="playlist.html" id="hoverColor" class="thisPageNow">Playlist</a></li>
                 <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
                 <li><a href="search.html" id="hoverColor">Search</a></li>
                 <li><a href="about.html" id="hoverColor">About</a></li>
@@ -70,6 +93,7 @@ function generateNavBar() {
                 
                 <li><a href="index.html">Home</a></li>
                 <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="playlist.html" id="hoverColor">Playlist</a></li>
                 <li><a href="spotlight.html" id="hoverColor" class="thisPageNow">Spotlight</a></li>
                 <li><a href="search.html" id="hoverColor">Search</a></li>
                 <li><a href="about.html" id="hoverColor">About</a></li>
@@ -90,6 +114,7 @@ function generateNavBar() {
                 
                 <li><a href="index.html">Home</a></li>
                 <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="playlist.html" id="hoverColor">Playlist</a></li>
                 <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
                 <li><a href="search.html" id="hoverColor" class="thisPageNow">Search</a></li>
                 <li><a href="about.html" id="hoverColor">About</a></li>
@@ -110,6 +135,7 @@ function generateNavBar() {
                 
                 <li><a href="index.html">Home</a></li>
                 <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="playlist.html" id="hoverColor">Playlist</a></li>
                 <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
                 <li><a href="search.html" id="hoverColor">Search</a></li>
                 <li><a href="about.html" id="hoverColor" class="thisPageNow">About</a></li>
@@ -130,6 +156,7 @@ function generateNavBar() {
                 
                 <li><a href="index.html">Home</a></li>
                 <li><a href="artists.html" id="hoverColor">Artists</a></li>
+                <li><a href="playlist.html" id="hoverColor">Playlist</a></li>
                 <li><a href="spotlight.html" id="hoverColor">Spotlight</a></li>
                 <li><a href="search.html" id="hoverColor">Search</a></li>
                 <li><a href="about.html" id="hoverColor">About</a></li>
@@ -443,5 +470,40 @@ function submitReview() {
     document.querySelector('input[name="rating"]:checked').checked = false;
     document.getElementById("review").value = "";
 }
-
+// document.addEventListener('DOMContentLoaded', function() {
+//     document.querySelectorAll('.plus-button').forEach(button => {
+//         button.onclick = function() {
+//             const songbox = button.closest('.songbox');
+//             const songId = songbox.id;
+//             const songName = songbox.querySelector('.song-name').textContent;
+//             const songDuration = songbox.querySelector('.song-duration').textContent;
+//             const xhr = new XMLHttpRequest();
+//             xhr.open('POST', '/add_song');
+//             xhr.onload = function() {
+//                 if (xhr.status === 200) {
+//                     console.log(xhr.responseText);
+//                 }
+//             };
+//             const data = new FormData();
+//             data.append('song_id', songId);
+//             data.append('song_name', songName);
+//             data.append('song_duration', songDuration);
+//             xhr.send(data);
+//         };
+//     });
+// });
+function addSong() {
+    var songName = document.querySelector('.song-name').innerText;
+    var songDuration = document.querySelector('.song-duration').innerText;
+    var songId = document.querySelector('.songbox').id;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/add_song');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            console.log(xhr.responseText);
+        }
+    };
+    xhr.send('song_id=' + encodeURIComponent(songId) + '&song_name=' + encodeURIComponent(songName) + '&song_duration=' + encodeURIComponent(songDuration));
+}
 

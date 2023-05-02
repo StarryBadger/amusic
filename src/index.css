@@ -980,3 +980,15 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.songbox button
+{
+    padding: 1px;
+    background-color: rgba(65, 149, 218, 0.5);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    width: 26px;
+    /* margin-left: -4px; */
+}
