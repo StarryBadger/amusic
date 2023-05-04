@@ -109,6 +109,9 @@ def sTheWeathermanGregory():
 @app.route('/sThisEmptyNorthernHemisphereGregory.html')
 def sThisEmptyNorthernHemisphereGregory():
     return render_template("sThisEmptyNorthernHemisphereGregory.html")
+@app.route('/playlist.html')
+def playlist():
+    return render_template("playlist.html")
 
 @app.route('/endpoint/<string>',methods=['POST','GET'])
 def newSong(string):
