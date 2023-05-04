@@ -22,7 +22,7 @@ function generateNavBar() {
         <nav>
             <div class="logo unselectable">
                 <img class="logo_main" src={{url_for('static',filename='Logo.png')}} alt="My Logo" width="200" height="100">
-                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="../static/LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1>AMUSIC</h1>
 
             </div>
@@ -42,8 +42,8 @@ function generateNavBar() {
         return `
         <nav>
             <div class="logo unselectable">
-                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
-                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src="../static/Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="../static/LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1>AMUSIC</h1>
 
             </div>
@@ -63,8 +63,8 @@ function generateNavBar() {
         return `
         <nav>
             <div class="logo unselectable">
-                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
-                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src="../static/Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="../static/LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1>AMUSIC</h1>
 
             </div>
@@ -84,8 +84,8 @@ function generateNavBar() {
         return `
         <nav>
             <div class="logo unselectable">
-                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
-                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src="../static/Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="../static/LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1>AMUSIC</h1>
 
             </div>
@@ -105,8 +105,8 @@ function generateNavBar() {
         return `
         <nav>
             <div class="logo unselectable">
-                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
-                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src="../static/Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="../static/LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1>AMUSIC</h1>
 
             </div>
@@ -126,8 +126,8 @@ function generateNavBar() {
         return `
         <nav>
             <div class="logo unselectable">
-                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
-                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src="../static/Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="../static/LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1>AMUSIC</h1>
 
             </div>
