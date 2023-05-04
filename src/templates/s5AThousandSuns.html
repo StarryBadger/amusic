@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amusic</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
     <link rel="shortcut icon" href="#">
 </head>
 
@@ -12,7 +12,7 @@
 
     <br><br><br><br>
     <div style="display:flex;align-items:center;margin: 2%;">
-        <img src="artist5/AThousandSuns.jpg"
+        <img src="{{url_for('static',filename='artist5/AThousandSuns.jpg')}}"
             style="margin-left:10%;margin-right: 4%;border-radius: 10%; border: 2.5px solid white;" width="300px">
         <p style="margin-top:5%;color: white;font-size: 70px;">A Thousand Suns</p>
     </div>
@@ -39,7 +39,7 @@
             <div style="font-size: 18px; color: white; margin-right: 10px;">2</div>
             <div class="song-name" style="flex: 1; text-align: center; color: white; font-size: 18px;">The Catalyst</div>
             <div class="song-duration" style="font-size: 18px; color: white; margin-left: 10px;">5:40</div>
-            <button class="plus-button" title="Add To Playlist" style="margin-left: 100px; cursor: pointer;" onclick=addSong()>+</button>
+            <button class="plus-button" title="Add To Playlist" style="margin-left: 100px; cursor: pointer;">+</button>
         </div>
     </div>
     <div class="songbox" id="0503">
@@ -68,7 +68,7 @@
     </div>
     <br><br><br><br><br>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
 </body>
 
 </html>

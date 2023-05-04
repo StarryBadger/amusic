@@ -21,7 +21,7 @@ function generateNavBar() {
         return `
         <nav>
             <div class="logo unselectable">
-                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src={{url_for('static',filename='Logo.png')}} alt="My Logo" width="200" height="100">
                 <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1>AMUSIC</h1>
 
@@ -147,8 +147,8 @@ function generateNavBar() {
         return `
         <nav>
             <div class="logo unselectable">
-                <img class="logo_main" src="Logo.png" alt="My Logo" width="200" height="100">
-                <img class="logo_hover" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src="../static/Logo.png" alt="My Logo" width="200" height="100">
+                <img class="logo_hover" src="../static/../static/LogoSmile.png" alt="My Other Logo" width="200" height="100">
                 <h1>AMUSIC</h1>
 
             </div>
@@ -174,9 +174,9 @@ const image = document.querySelector('.logo_hover');
 const currentUrl = window.location.href;
 let newImageUrl;
 if (currentUrl.includes('spotlight.html')) {
-    newImageUrl = 'LogoSpotlight.png';
+    newImageUrl = '../static/LogoSpotlight.png';
 } else {
-    newImageUrl = 'LogoSmile.png';
+    newImageUrl = '../static/LogoSmile.png';
 }
 image.src = newImageUrl;
 //hover color nav
@@ -195,7 +195,7 @@ function generateFooter() {
     <footer>
         <div class="footer unselectable">
             <div class="logo unselectable">
-                <img class="logo_main" src="LogoSmile.png" alt="My Logo" width="200" height="100">
+                <img class="logo_main" src="../static/LogoSmile.png" alt="My Logo" width="200" height="100">
                 <h1 style="color:#5B8FB9;">AMUSIC</h1>
             </div>
             <div class="row">
@@ -473,73 +473,37 @@ function submitReview() {
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.plus-button').forEach(button => {
         button.onclick = function () {
-const songbox = button.closest('.songbox');
-const songId = songbox.id;
-const songName = songbox.querySelector('.song-name').textContent;
-const songDuration = songbox.querySelector('.song-duration').textContent;
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/add_song');
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    console.log(xhr.responseText);
-                }
+            const songbox = button.closest('.songbox');
+            const songId = songbox.id;
+            const songName = songbox.querySelector('.song-name').textContent;
+            const songDuration = songbox.querySelector('.song-duration').textContent;
+            const data = {
+                "check": songId,
+                "name": songName,
+                "something": songDuration
             };
-            const data = new FormData();
-            data.append('song_id', songId);
-            data.append('song_name', songName);
-            data.append('song_duration', songDuration);
-            xhr.send(data);
-        };
+            console.log(data);
+            var new_a = document.createElement('a');
+            new_a.setAttribute('href', '/endpoint/'+songId+" "+songName+" "+songDuration)
+            new_a.click();
+            // fetch('/src/endpoint', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(data)
+            // })
+            // fetch('/test', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(data)
+            // })
+            //     .then(response => response.json())
+            //     .then(data => { console.log(data); })
+            //     .catch(error => { console.error(error); })
+        }
     });
 });
-// function addSong() {
-//     var songName = document.querySelector('.song-name').innerText;
-//     var songDuration = document.querySelector('.song-duration').innerText;
-//     var songId = document.querySelector('.songbox').id;
-//     var xhr = new XMLHttpRequest();
-//     xhr.open('POST', '/add_song');
-//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//     xhr.onload = function () {
-//         if (xhr.status === 200) {
-//             console.log(xhr.responseText);
-//         }
-//     };
-//     xhr.send('song_id=' + encodeURIComponent(songId) + '&song_name=' + encodeURIComponent(songName) + '&song_duration=' + encodeURIComponent(songDuration));
-// }
-// document.addEventListener('DOMContentLoaded', function () {
-//     document.querySelectorAll('.plus-button').forEach(button => {
-//         button.onclick = function () {
-//             const songbox = button.closest('.songbox');
-//             const songId = songbox.id;
-//             const songName = songbox.querySelector('.song-name').textContent;
-//             const songDuration = songbox.querySelector('.song-duration').textContent;
-//             const data = {
-//                 "check": songId,
-//                 "name": songName,
-//                 "something": songDuration
-//             };
-//             console.log(data);
-//             var new_a = document.createElement('a');
-//             new_a.setAttribute('href', '/endpoint/'+data['check'])
-//             new_a.click();
-//             // fetch('/endpoint', {
-//             //     method: 'POST',
-//             //     headers: {
-//             //         'Content-Type': 'application/json'
-//             //     },
-//             //     body: JSON.stringify(data)
-//             // })
-//             // fetch('/test', {
-//             //     method: 'POST',
-//             //     headers: {
-//             //         'Content-Type': 'application/json'
-//             //     },
-//             //     body: JSON.stringify(data)
-//             // })
-//             //     .then(response => response.json())
-//             //     .then(data => { console.log(data); })
-//             //     .catch(error => { console.error(error); })
-//         }
-//     });
-// });
 
