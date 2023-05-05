@@ -152,7 +152,7 @@ def playlist():
     SongsName=db.execute(getName)
     getDuration="SELECT song_duration FROM songs;"
     SongsDuration=db.execute(getDuration)
-    return render_template("playlist.html")
+    return render_template("playlist.html",SongsName=SongsName[1],SongsDuration=SongsDuration[1],length=len(SongsName[1]))
 
 if __name__ == "__main__":
     app.run(debug=True)
