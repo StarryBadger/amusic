@@ -490,4 +490,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.minus-button').forEach(button => {
+        button.onclick = function () {
+            const songbox = button.closest('.songbox');
+            fetch('/removeendpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "name": songbox.querySelector('.song-name').textContent,
+                    "something": songbox.querySelector('.song-duration').textContent
+                })
+            }).then(res=>res.json()).then(ok=>console.log(ok))
+
+            // window.location = "/endpoint";
+        }
+    });
+});
 

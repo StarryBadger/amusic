@@ -154,5 +154,15 @@ def playlist():
     SongsDuration=db.execute(getDuration)
     return render_template("playlist.html",SongsName=SongsName[1],SongsDuration=SongsDuration[1],length=len(SongsName[1]))
 
+@app.route('/removeendpoint',methods=['POST', 'GET'])
+def newSong2():
+    if request.method == "POST":
+        res = request.json
+        song_name = res['name']
+        song_duration=res['something']
+        print(song_name+" "+song_duration)
+        return {'song status':'received'}
+    elif request.method == "GET":
+        return f"<h1>hello<h1>"
 if __name__ == "__main__":
     app.run(debug=True)
