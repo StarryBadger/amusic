@@ -1,5 +1,6 @@
 #!/bin/python3
 from flask import Flask , request ,render_template, redirect
+import sqlite3
 import json
 
 headers={
@@ -114,11 +115,30 @@ def sThisEmptyNorthernHemisphereGregory():
 def playlist():
     return render_template("playlist.html")
 
-@app.route('/endpoint',methods=['POST'])
+latest_song_name = "hello"
+@app.route('/endpoint',methods=['POST', 'GET'])
 def newSong():
-    res = request.json
-    print(res['name'])
-    return {"status": "200"}
+    if request.method == "POST":
+        res = request.json
+        song_name = res['name']
+        song_id=res['check']
+        song_duration=res['something']
+        print(song_id+" "+song_name+" "+song_duration)
+        conn = sqlite3.connect('songs.db')
+        c = conn.cursor()
+        c.execute('SELECT * FROM songs WHERE song_id = ?', (song_id,))
+        if c.fetchone() is None:
+            c.execute('INSERT INTO songs (song_id, song_name, song_duration) VALUES (?, ?, ?)', (song_id, song_name, song_duration))
+            # data2= c.execute('SELECT song_id, song_name, song_duration FROM songs')
+            # print(data2[1])
+            conn.commit()
+            conn.close()
+            return {'song status':'added'}
+        else:
+            conn.close()
+            return {'song status':'exist'}
+    elif request.method == "GET":
+        return f"<h1>hello<h1>"
 
 if __name__ == "__main__":
     app.run(debug=True)
