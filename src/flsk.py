@@ -148,10 +148,11 @@ def newSong():
 @app.route('/playlist.html')
 def playlist():
     db = DBclass('songs.db')
-    getVenue="SELECT song_name FROM songs;"
-    SongsName=db.execute(getVenue)
-    print(SongsName)
-    return "<h1>hello</h1>"
+    getName="SELECT song_name FROM songs;"
+    SongsName=db.execute(getName)
+    getDuration="SELECT song_duration FROM songs;"
+    SongsDuration=db.execute(getDuration)
+    return render_template("playlist.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
