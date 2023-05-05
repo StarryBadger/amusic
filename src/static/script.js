@@ -474,6 +474,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.plus-button').forEach(button => {
         button.onclick = function () {
             const songbox = button.closest('.songbox');
+            var slideout = document.getElementById('notif');
             fetch('/endpoint', {
                 method: 'POST',
                 headers: {
@@ -484,16 +485,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     "name": songbox.querySelector('.song-name').textContent,
                     "something": songbox.querySelector('.song-duration').textContent
                 })
-            }).then(res=>res.json()).then(ok=>console.log(ok))
-
-            // window.location = "/endpoint";
+            })
         }
     });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.minus-button').forEach(button => {
         button.onclick = function () {
             const songbox = button.closest('.songbox');
+
+
             fetch('/removeendpoint', {
                 method: 'POST',
                 headers: {
@@ -503,11 +505,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     "name": songbox.querySelector('.song-name').textContent,
                     "something": songbox.querySelector('.song-duration').textContent
                 })
-            }).then(res=>res.json()).then(ok=>console.log(ok))
-
+            }).then(res => res.json()).then(ok => console.log(ok))
             window.location = "/playlist.html";
             window.location.reload();
         }
     });
 });
+
+
 

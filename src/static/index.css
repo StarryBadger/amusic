@@ -873,7 +873,7 @@ textarea:focus {
     top: 2px;
 }
 
-.review .radio-container input[type="radio"]:checked + label::before {
+.review .radio-container input[type="radio"]:checked+label::before {
     color: #2196F3;
 }
 
@@ -981,8 +981,7 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-.songbox .plus-button
-{
+.songbox .plus-button {
     padding: 1px;
     background-color: rgba(65, 149, 218, 0.5);
     color: white;
@@ -992,8 +991,8 @@ input:checked+.slider:before {
     width: 26px;
     /* margin-left: -4px; */
 }
-.songbox .minus-button
-{
+
+.songbox .minus-button {
     padding: 1px;
     background-color: rgba(237, 68, 88, 0.562);
     color: white;
@@ -1002,4 +1001,23 @@ input:checked+.slider:before {
     font-size: 20px;
     width: 26px;
     /* margin-left: -4px; */
+}
+
+.added {
+    color: rgba(65, 149, 218, 0.5);
+    animation: blur 3s ease-in-out;
+}
+
+@keyframes blur {
+    0% {
+        filter: blur(0);
+    }
+
+    50% {
+        filter: blur(4px);
+    }
+
+    100% {
+        filter: blur(0);
+    }
 }
