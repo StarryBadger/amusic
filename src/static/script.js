@@ -474,35 +474,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.plus-button').forEach(button => {
         button.onclick = function () {
             const songbox = button.closest('.songbox');
-            const songId = songbox.id;
-            const songName = songbox.querySelector('.song-name').textContent;
-            const songDuration = songbox.querySelector('.song-duration').textContent;
-            const data = {
-                "check": songId,
-                "name": songName,
-                "something": songDuration
-            };
-            console.log(data);
-            var new_a = document.createElement('a');
-            new_a.setAttribute('href', '/endpoint/'+songId+" "+songName+" "+songDuration)
-            new_a.click();
-            // fetch('/src/endpoint', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(data)
-            // })
-            // fetch('/test', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(data)
-            // })
-            //     .then(response => response.json())
-            //     .then(data => { console.log(data); })
-            //     .catch(error => { console.error(error); })
+            fetch('/endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "check": songbox.id,
+                    "name": songbox.querySelector('.song-name').textContent,
+                    "something": songbox.querySelector('.song-duration').textContent
+                })
+            }).then(res => res.json()).then(ok => console.log(ok))
         }
     });
 });

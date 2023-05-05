@@ -7,6 +7,7 @@ headers={
 }
 app = Flask(__name__)
 
+@app.route('/')
 @app.route('/index.html')
 def index():
     return render_template("index.html")
@@ -113,18 +114,11 @@ def sThisEmptyNorthernHemisphereGregory():
 def playlist():
     return render_template("playlist.html")
 
-@app.route('/endpoint/<string>',methods=['POST','GET'])
-def newSong(string):
-    return redirect("/")
-    data=request.get_json()
-    print(string)
-    song_id=data['check']
-    song_name=data['name']
-    song_duration=data['something']
-    
-    with open('songs.txt','a') as f:
-        f.write(json.dumps(data)+'\n')
-    return "Received bro"
+@app.route('/endpoint',methods=['POST'])
+def newSong():
+    res = request.json
+    print(res['name'])
+    return {"status": "200"}
 
 if __name__ == "__main__":
     app.run(debug=True)
