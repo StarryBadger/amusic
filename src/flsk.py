@@ -7,7 +7,15 @@ headers={
     'Content-Type': 'application/json'
 }
 app = Flask(__name__)
+class DBclass:
+    def __init__(self, path):
+        self.path = path
+        self.db = sqlite3.connect(self.path)
+        self.cur = self.db.cursor()
 
+    def execute(self, query):
+        self.cur.execute(query)
+        return [i[0] for i in self.cur.description], self.cur.fetchall()
 @app.route('/')
 @app.route('/index.html')
 def index():
@@ -39,9 +47,9 @@ def AlbumsLinkinPark():
 @app.route('/AlbumsTheBeatles.html')
 def AlbumsTheBeatles():
     return render_template("AlbumsTheBeatles.html")
-@app.route('/s2KamakazeEminem.html')
-def s2KamakazeEminem():
-    return render_template("s2KamakazeEminem.html")
+@app.route('/s2KamikazeEminem.html')
+def s2KamikazeEminem():
+    return render_template("s2KamikazeEminem.html")
 @app.route('/s2EncoreEminem.html')
 def s2EncoreEminem():
     return render_template("s2EncoreEminem.html")
@@ -111,9 +119,9 @@ def sTheWeathermanGregory():
 @app.route('/sThisEmptyNorthernHemisphereGregory.html')
 def sThisEmptyNorthernHemisphereGregory():
     return render_template("sThisEmptyNorthernHemisphereGregory.html")
-@app.route('/playlist.html')
-def playlist():
-    return render_template("playlist.html")
+# @app.route('/playlist.html')
+# def playlist():
+#     return render_template("playlist.html")
 
 latest_song_name = "hello"
 @app.route('/endpoint',methods=['POST', 'GET'])
@@ -129,8 +137,6 @@ def newSong():
         c.execute('SELECT * FROM songs WHERE song_id = ?', (song_id,))
         if c.fetchone() is None:
             c.execute('INSERT INTO songs (song_id, song_name, song_duration) VALUES (?, ?, ?)', (song_id, song_name, song_duration))
-            # data2= c.execute('SELECT song_id, song_name, song_duration FROM songs')
-            # print(data2[1])
             conn.commit()
             conn.close()
             return {'song status':'added'}
@@ -139,6 +145,13 @@ def newSong():
             return {'song status':'exist'}
     elif request.method == "GET":
         return f"<h1>hello<h1>"
+@app.route('/playlist.html')
+def playlist():
+    db = DBclass('songs.db')
+    getVenue="SELECT song_name FROM songs;"
+    SongsName=db.execute(getVenue)
+    print(SongsName)
+    return "<h1>hello</h1>"
 
 if __name__ == "__main__":
     app.run(debug=True)

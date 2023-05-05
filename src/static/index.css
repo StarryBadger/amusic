@@ -981,10 +981,21 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-.songbox button
+.songbox .plus-button
 {
     padding: 1px;
     background-color: rgba(65, 149, 218, 0.5);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    width: 26px;
+    /* margin-left: -4px; */
+}
+.songbox .minus-button
+{
+    padding: 1px;
+    background-color: rgba(237, 68, 88, 0.562);
     color: white;
     border: none;
     border-radius: 6px;
