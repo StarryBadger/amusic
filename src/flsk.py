@@ -160,6 +160,11 @@ def newSong2():
         res = request.json
         song_name = res['name']
         song_duration=res['something']
+        conn = sqlite3.connect('songs.db')
+        c = conn.cursor()
+        c.execute('DELETE FROM songs WHERE song_name=?', (song_name,))
+        conn.commit()
+        conn.close()
         print(song_name+" "+song_duration)
         return {'song status':'received'}
     elif request.method == "GET":

@@ -505,7 +505,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
             }).then(res=>res.json()).then(ok=>console.log(ok))
 
-            // window.location = "/endpoint";
+            window.location = "/playlist.html";
+            window.location.reload();
         }
     });
 });
