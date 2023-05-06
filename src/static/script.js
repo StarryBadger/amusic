@@ -505,9 +505,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     "name": songbox.querySelector('.song-name').textContent,
                     "something": songbox.querySelector('.song-duration').textContent
                 })
-            }).then(res => res.json()).then(ok => console.log(ok))
-            window.location = "/playlist.html";
-            window.location.reload();
+            }).then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    console.log('Error: ' + response.statusText);
+                }
+            })
+                .catch(error => {
+                    console.log('Error: ' + error);
+                });
         }
     });
 });
