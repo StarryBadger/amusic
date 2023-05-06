@@ -17,7 +17,7 @@ if (window.location.href.includes("AlbumsEminem.html") || window.location.href.i
 
 //nav bar  
 function generateNavBar() {
-    if (window.location.pathname.includes('index.html')||window.location.pathname === '/') {
+    if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
         return `
         <nav>
             <div class="logo unselectable">
@@ -433,6 +433,17 @@ if (window.location.pathname.includes('search.html')) {
                                 }
                                 else {
                                     resultsContainer.innerHTML = htmlcode;
+                                    const audioElements = document.querySelectorAll('audio');
+                                    audioElements.forEach(audioElement => {
+                                        audioElement.addEventListener('play', (event) => {
+                                            // Pause all other audio elements
+                                            audioElements.forEach(a => {
+                                                if (a !== event.target) {
+                                                    a.pause();
+                                                }
+                                            });
+                                        });
+                                    });
                                 }
                             }
                         }
@@ -475,13 +486,13 @@ document.addEventListener('DOMContentLoaded', function () {
         button.onclick = function () {
             button.style.backgroundColor = 'rgba(31, 255, 177, 0.531)';
             button.style.transform = 'scale(1.15)';
-            button.style.borderRadius= '8px';
+            button.style.borderRadius = '8px';
             button.style.transition = 'background-color 0.5s ease-in-out, transform 0.5s ease-in-out';
 
             setTimeout(function () {
                 button.style.backgroundColor = 'rgba(65, 149, 218, 0.5)';
                 button.style.transform = 'scale(1)';
-                button.style.borderRadius= '6px';
+                button.style.borderRadius = '6px';
             }, 500);
             const songbox = button.closest('.songbox');
             var slideout = document.getElementById('notif');
@@ -529,5 +540,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// const audioElements = document.getElementsByTagName('audio');
 
+// for (let i = 0; i < audioElements.length; i++) {
+//     audioElements[i].addEventListener('play', function () {
+//         pauseOtherAudioElements(this);
+//     });
+// }
 
+// function pauseOtherAudioElements(currentAudio) {
+//     for (let i = 0; i < audioElements.length; i++) {
+//         if (audioElements[i] !== currentAudio) {
+//             audioElements[i].pause();
+//         }
+//     }
+// }
