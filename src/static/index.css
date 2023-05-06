@@ -1002,22 +1002,3 @@ input:checked+.slider:before {
     width: 26px;
     /* margin-left: -4px; */
 }
-
-.added {
-    color: rgba(65, 149, 218, 0.5);
-    animation: blur 3s ease-in-out;
-}
-
-@keyframes blur {
-    0% {
-        filter: blur(0);
-    }
-
-    50% {
-        filter: blur(4px);
-    }
-
-    100% {
-        filter: blur(0);
-    }
-}

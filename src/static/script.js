@@ -17,7 +17,7 @@ if (window.location.href.includes("AlbumsEminem.html") || window.location.href.i
 
 //nav bar  
 function generateNavBar() {
-    if (window.location.pathname.includes('index.html')) {
+    if (window.location.pathname.includes('index.html')||window.location.pathname === '/') {
         return `
         <nav>
             <div class="logo unselectable">
@@ -473,6 +473,16 @@ function submitReview() {
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.plus-button').forEach(button => {
         button.onclick = function () {
+            button.style.backgroundColor = 'rgba(31, 255, 177, 0.531)';
+            button.style.transform = 'scale(1.15)';
+            button.style.borderRadius= '8px';
+            button.style.transition = 'background-color 0.5s ease-in-out, transform 0.5s ease-in-out';
+
+            setTimeout(function () {
+                button.style.backgroundColor = 'rgba(65, 149, 218, 0.5)';
+                button.style.transform = 'scale(1)';
+                button.style.borderRadius= '6px';
+            }, 500);
             const songbox = button.closest('.songbox');
             var slideout = document.getElementById('notif');
             fetch('/endpoint', {
