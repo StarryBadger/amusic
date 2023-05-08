@@ -1,13 +1,21 @@
 <h1>This is the Amusic by #BashHang!</h1>
 <br/>
-<p>Open `index.html` to access the Home page of Amusic. `index.css` is the stylesheet being used for this project.
-The home page contains a navigation bar which allows the user to go to the Artists page and the About page.
+<p>First ensure that you have python3 installed on your computerall with the external libraries, namely flask and sqlite3. Then run flsk.py and follow the localhost IP Adress to access the website opens at `index.html`, the Home page of Amusic. `index.css` is the stylesheet being used for this project.
+
+The home page contains a navigation bar which allows the user to go to the Artists page,the Spotlight Page and the Playlist Page. You can also serarch songs on the Search page, and learn more about the creators on the About Page.
+
 There are 3 rows of Top Charts contents, listing three of each: Top Artists, Top Albums and Top Songs of the Week.
 Clicking on an artist will take the user to a listing of 5 of their albums. Similarly, clicking on an album will take the user to a listing of 5 songs in the album.</p>
+
 <h4>Hovering on the Artist and Album divs will show additional information about them!</h4>
+
 <p>On the Navigation bar, clicking on `Artists` takes the user to the Artists page where 5 artists are listed. Clicking on an artist will take the user to a listing of 5 of their albums. Clicking on any one of these albums will take the user to a listing of 5 songs in the album. These songs are not clickable. Home, Artists or About, when displayed in pink tells the user they are on that respective page.</p>
+
+<p>On the song pages, clicking on the <strong>+</strong> button adds a song to the playlist while clicking on the <strong>-<strong> button on the Playlist page removes it from the playlist.
+
+<p>The Spotlight Page honours <en>Marshmello</en> and counts down the release to his new album Joytime IV</p>
+
 <p>Clicking on `About` on the Navigation bar or 'About Us` on the website footer takes the user to a page where the names and email information of the two creators are provided along with a quick rundown on the purpose of Amusic as a music database webste.</p>
-<p>Terms of Service in the footer lists the Terms of Service that Amusic expects all its users to abide by.</p>  
 <br/>
 <h3>The Files</h3>
 <br/>
