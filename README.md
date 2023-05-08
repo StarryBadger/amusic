@@ -19,7 +19,7 @@ Clicking on an artist will take the user to a listing of 5 of their albums. Simi
 <br/>
 <h3>The Files</h3>
 <br/>
-<p>Album&lt;artist name&gt;.html are album pages on each artist. s&lt;Artist Number&gt;&lt;Album Name&gt; are the song pages of indiviual albums. artist&lt;Artist Number&gt; are 5 folders contain images relating to the resepctive artists, and the remaining image resources, such as Logo.png, LogoSmile.png, etc. for the logo and the background image are in the src directory itself. term.html contains the terms and conditions of Amusic.</p>
+<p>static contains the images, CSS Javascript. templates contains the HTML files. flsk.py links these pages while createDB.py was used to create the SQL database. Album&lt;artist name&gt;.html are album pages on each artist. s&lt;Artist Number&gt;&lt;Album Name&gt; are the song pages of indiviual albums. artist&lt;Artist Number&gt; are 5 folders contain images relating to the resepctive artists, and the remaining image resources, such as Logo.png, LogoSmile.png, etc. for the logo and the background image are in the src directory itself.</p>
 <br/>
 <h3>Project Structure</h3>
 <br/>
@@ -27,13 +27,6 @@ Clicking on an artist will take the user to a listing of 5 of their albums. Simi
 ├── ASSUMPTIONS.md
 ├── README.md
 └── src
-    ├── Backup Backdrops
-    │   ├── kushal-medhi-5v5VKmvNqF8-unsplash.jpg
-    │   ├── linda-xu-arvoZ9puXv4-unsplash.jpg
-    │   ├── marcela-laskoski-YrtFlrLo2DQ-unsplash.jpg
-    │   ├── oscar-keys-ojVMh1QTVGY-unsplash.jpg
-    │   ├── tyler-lastovich-3shfnfzdFVc-unsplash.jpg
-    │   └── william-krause-97p-JwqdyW4-unsplash.jpg
     ├── createDB.py
     ├── flsk.py
     ├── songs.db
