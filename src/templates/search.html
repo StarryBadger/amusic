@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Phase 2 indicator -->
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amusic</title>
+  <link rel="stylesheet" type="text/css" href="../static/index.css">
+  <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+  <br><br><br><br><br><br><br><br><br><br><br>
+  
+  <div class="search-container unselectable">
+    <form class="b">
+      <input type="text" placeholder="Search any song or artist...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <br><br><br><br>
+  
+  <div class="filter-container">
+    <form class="a">
+      <label for="duration-input" style="color:white">Duration:</label>
+      <input type="number" id="duration-input" name="duration-input" placeholder="Duration in minutes" required>
+      <br><br><br>
+      <label for="explicit-toggle" style="color:white;">Remove Explicit:</label>
+      <label class="switch">
+        <input type="checkbox" id="explicit-toggle">
+        <span class="slider round"></span>
+      </label>
+    </form>
+  </div>
+  <br><br><br><br>
+
+  <div id="results-container"></div>
+  <br><br><br><br><br><br><br><br><br><br>
+  
+  <script src="../static/script.js"></script>
+</body>
+
+</html>
